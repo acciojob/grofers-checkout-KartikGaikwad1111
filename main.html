@@ -1,45 +1,52 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <title>Grofers Checkout</title>
 </head>
-
 <body>
-    <!-- the entire body must be written by student -->
-    <table style="width: 100%">
-    <caption>
-      Monthly savings
-    </caption>
+
+<table id="groceryTable" border="1">
     <tr>
-      <th>Item</th>
-      <th>Prices in Rs</th>
+        <th>Item</th>
+        <th>Price</th>
     </tr>
-    <tr>
-      <td class="item">Tea</td>
-      <td class="price">50</td>
+    <tr class="item">
+        <td>Rice</td>
+        <td class="prices">100</td>
     </tr>
-    <tr>
-      <td class="item">Coffee</td>
-      <td class="price">70</td>
+    <tr class="item">
+        <td>Wheat</td>
+        <td class="prices">200</td>
     </tr>
-    <tr>
-      <td class="item">Biscuits</td>
-      <td class="price">100</td>
+    <tr class="item">
+        <td>Sugar</td>
+        <td class="prices">50</td>
     </tr>
-    <tr>
-      <td class="item">Rice</td>
-      <td class="price">130</td>
-    </tr>
-    <tr>
-      <td class="item">Milk</td>
-      <td class="price">50</td>
-    </tr>
-  </table>
-    <script type="text/javascript" src="./script.js">
+</table>
+
+<script>
+    // Step 1: Get all price elements
+    let priceElements = document.querySelectorAll(".prices");
+
+    // Step 2: Calculate total
+    let total = 0;
+    priceElements.forEach(function(price) {
+        total += Number(price.textContent);
+    });
+
+    // Step 3: Create new row
+    let table = document.getElementById("groceryTable");
+    let newRow = document.createElement("tr");
+
+    // Step 4: Create cell for total
+    let newCell = document.createElement("td");
+    newCell.colSpan = 2; // span across both columns
+    newCell.textContent = "Total Price: " + total;
+
+    // Step 5: Append cell to row and row to table
+    newRow.appendChild(newCell);
+    table.appendChild(newRow);
 </script>
 
 </body>
-
 </html>
