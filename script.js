@@ -1,16 +1,14 @@
-window.onload = function() {
+window.onload = function () {
 
-    // get all price elements
     let prices = document.querySelectorAll(".prices");
-
     let total = 0;
 
     // calculate total
-    prices.forEach(function(p) {
-        total += parseInt(p.innerText);
-    });
+    for (let i = 0; i < prices.length; i++) {
+        total += Number(prices[i].innerText);
+    }
 
-    // create new row
+    // create row
     let row = document.createElement("tr");
 
     // create cell
@@ -18,7 +16,7 @@ window.onload = function() {
     cell.colSpan = 2;
     cell.innerText = total;
 
-    // append to table
+    // append
     row.appendChild(cell);
     document.getElementById("groceryTable").appendChild(row);
 };
