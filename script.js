@@ -1,21 +1,24 @@
-// get all price elements
-let prices = document.querySelectorAll(".prices");
+window.onload = function() {
 
-let total = 0;
+    // get all price elements
+    let prices = document.querySelectorAll(".prices");
 
-// calculate total
-prices.forEach(function(p) {
-    total += parseInt(p.innerText);
-});
+    let total = 0;
 
-// create new row
-let row = document.createElement("tr");
+    // calculate total
+    prices.forEach(function(p) {
+        total += parseInt(p.innerText);
+    });
 
-// create cell
-let cell = document.createElement("td");
-cell.colSpan = 2;
-cell.innerText = total;
+    // create new row
+    let row = document.createElement("tr");
 
-// append to row and table
-row.appendChild(cell);
-document.getElementById("groceryTable").appendChild(row);
+    // create cell
+    let cell = document.createElement("td");
+    cell.colSpan = 2;
+    cell.innerText = total;
+
+    // append to table
+    row.appendChild(cell);
+    document.getElementById("groceryTable").appendChild(row);
+};
