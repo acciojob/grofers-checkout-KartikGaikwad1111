@@ -24,29 +24,7 @@
     </tr>
 </table>
 
-<script>
-    // Step 1: Get all price elements
-    let priceElements = document.querySelectorAll(".prices");
-
-    // Step 2: Calculate total
-    let total = 0;
-    priceElements.forEach(function(price) {
-        total += Number(price.textContent);
-    });
-
-    // Step 3: Create new row
-    let table = document.getElementById("groceryTable");
-    let newRow = document.createElement("tr");
-
-    // Step 4: Create cell for total
-    let newCell = document.createElement("td");
-    newCell.colSpan = 2; // span across both columns
-    newCell.textContent = "Total Price: " + total;
-
-    // Step 5: Append cell to row and row to table
-    newRow.appendChild(newCell);
-    table.appendChild(newRow);
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
